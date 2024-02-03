@@ -10,7 +10,7 @@ app = Flask(__name__)
 def exec_command():
     # Direkte Ausführung von Benutzereingaben ohne Validierung
     command = request.args.get('cmd')
-    subprocess.run(command.split(), shell=False) # nosec
+    subprocess.run(command.split(), shell=False) #nosec
     return "Kommando ausgeführt\n"
 
 @app.route('/upload', methods=['POST'])
