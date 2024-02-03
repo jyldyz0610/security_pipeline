@@ -24,8 +24,8 @@ def upload_file():
 def run_command():
     command = request.form['command']
     # Unsichere Verwendung von os.system für Benutzereingaben
-    os.system(command)
+    subprocess.run(command.split(), shell=False)
     return "Kommando ausgeführt\n"
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=5000)
+    app.run(debug=False, host='127.0.0.1', port=5000)
