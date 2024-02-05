@@ -1,4 +1,4 @@
-FROM ubuntu:19.04
+FROM ubuntu:latest
 
 RUN apt-get install -y ssh \
     wget \
@@ -7,6 +7,6 @@ RUN apt-get install -y ssh \
 
 COPY . /app
 
-RUN chmod -R 777 /app
+RUN chmod -R 775 /app
 
 CMD ["python3", "/app/run.py"]
